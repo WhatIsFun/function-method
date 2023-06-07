@@ -34,43 +34,43 @@ namespace functions_methods
 
         static void printMenu() {
             Console.WriteLine("***************************");
-            Console.Write("Enter first number:");
+            Console.Write("Enter first number: ");//User input first number
             int num1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter second number:");
+            Console.Write("Enter second number: "); //User input second number
             int num2 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Pick a method to continue");
-            Console.WriteLine("\\\\\\\\\\\\////////////");
+            Console.WriteLine("Pick a method to continue"); 
+            Console.WriteLine("\\\\\\\\\\\\\\\\\\\\\\");
             Console.WriteLine("A) Addition");
             Console.WriteLine("B) Subtraction");
             Console.WriteLine("C) Multiplication");
             Console.WriteLine("D) Division");
-            Console.WriteLine("\\\\\\\\\\\\////////////");
-            Console.WriteLine("* * * Print exit to exit the program * * *");
+            Console.WriteLine("//////////////////////");
+            Console.WriteLine("* * * Print exit to quit the program * * *"); // to quit the program
             
-            Console.Write("Choose your operation>>>> ");
+            Console.Write("Choose your operation>>>> "); //User choose which operation want
             string task = Console.ReadLine();
             int res;
             string value;
 
-            switch (task) { 
+            switch (task) { // switch statment 
                 case "A" or "a":
-                    add();
+                    add(); // addition method
                     break;
                 case "B" or "b":
-                    subtract();
+                    subtract(); // subtraction method
                     break;
                 case "C" or "c":
-                    multiple();
+                    multiple(); // multiplication method
                     break;
                 case "D" or "d":
-                    div();
+                    div(); // division method
                     break;
                 case "exit":
                     endProgram();
                     break;
                 default:
-                    Console.WriteLine("Wrong input");
+                    Console.WriteLine("Wrong input"); // if user enter another value the program will print Wrong input and return to the menu
                     printMenu();
                     break;
 
@@ -78,35 +78,35 @@ namespace functions_methods
              void add()
             {
                 res = num1 + num2;
-                Console.WriteLine(num1 + " + " + num2 + " = " + res);
+                Console.WriteLine(num1 + " + " + num2 + " = " + res); // num1+num2 = result
                 continueProgram();
             }
             void subtract()
             {
                 res = num1 - num2;
-                Console.WriteLine(num1 +" - " + num2 + " = " + res);
+                Console.WriteLine(num1 +" - " + num2 + " = " + res);// num1-num2 = result
                 continueProgram();
 
             }
             void multiple()
             {
                 res = num1 * num2;
-                Console.WriteLine(num1 + " x " + num2 + " = " + res);
+                Console.WriteLine(num1 + " x " + num2 + " = " + res);// num1xnum2 = result
                 continueProgram();
             }
 
             void div()
             {
                 res = num1 / num2;
-                Console.WriteLine(num1 + " / " + num2 + " = " + res);
+                Console.WriteLine(num1 + " / " + num2 + " = " + res); // num1/num2 = result
                 continueProgram();
             }
-            void endProgram()
+            void endProgram() // this method to end the program 
             {
                 Console.WriteLine("\\\\ Thank You For Using WhatIsFun Calculator ////");
                 Console.ReadLine();
             }
-            void continueProgram()
+            void continueProgram() // this method to keep the program after the operation done, it will ask the user if want to continue or not. if not the program will exit
             {
                 Console.Write("Do you want to continue(y/n):");
                 string value = Console.ReadLine();
