@@ -1,4 +1,6 @@
-﻿namespace functions_methods
+﻿using System.ComponentModel;
+
+namespace functions_methods
 {
     internal class Program
     {
@@ -31,34 +33,94 @@
         }
 
         static void printMenu() {
+            Console.WriteLine("***************************");
+            Console.Write("Enter first number:");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter second number:");
+            int num2 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("A) Add");
-            Console.WriteLine("B) ");
-            Console.WriteLine("C) ");
-            Console.WriteLine("D) ");
+            Console.WriteLine("Pick a method to continue");
+            Console.WriteLine("\\\\\\\\\\\\////////////");
+            Console.WriteLine("A) Addition");
+            Console.WriteLine("B) Subtraction");
+            Console.WriteLine("C) Multiplication");
+            Console.WriteLine("D) Division");
+            Console.WriteLine("\\\\\\\\\\\\////////////");
+            Console.WriteLine("* * * Print exit to exit the program * * *");
             
+            Console.Write("Choose your operation>>>> ");
+            string task = Console.ReadLine();
+            int res;
+            string value;
 
-            /*switch (task) { 
-                case "A":
-                    Console.WriteLine();
+            switch (task) { 
+                case "A" or "a":
+                    add();
+                    break;
+                case "B" or "b":
+                    subtract();
+                    break;
+                case "C" or "c":
+                    multiple();
+                    break;
+                case "D" or "d":
+                    div();
+                    break;
+                case "exit":
+                    endProgram();
+                    break;
+                default:
+                    Console.WriteLine("Wrong input");
+                    printMenu();
+                    break;
 
-                case "B":
-                    Console.WriteLine();
+            }
+             void add()
+            {
+                res = num1 + num2;
+                Console.WriteLine(num1 + " + " + num2 + " = " + res);
+                continueProgram();
+            }
+            void subtract()
+            {
+                res = num1 - num2;
+                Console.WriteLine(num1 +" - " + num2 + " = " + res);
+                continueProgram();
 
-                case "C":
-                    Console.WriteLine();
+            }
+            void multiple()
+            {
+                res = num1 * num2;
+                Console.WriteLine(num1 + " x " + num2 + " = " + res);
+                continueProgram();
+            }
 
-                case "D":
-                    Console.WriteLine();
+            void div()
+            {
+                res = num1 / num2;
+                Console.WriteLine(num1 + " / " + num2 + " = " + res);
+                continueProgram();
+            }
+            void endProgram()
+            {
+                Console.WriteLine("\\\\ Thank You For Using WhatIsFun Calculator ////");
+                Console.ReadLine();
+            }
+            void continueProgram()
+            {
+                Console.Write("Do you want to continue(y/n):");
+                string value = Console.ReadLine();
+                if (value == "y")
+                {
+                    printMenu();
+                }
+                else
+                {
+                    endProgram();
+                }
+            }
+        
 
-                case "#":
-
-
-
-
-
-
-            }*/
 
 
         }
